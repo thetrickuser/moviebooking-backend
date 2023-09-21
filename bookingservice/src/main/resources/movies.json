@@ -1,0 +1,20 @@
+[
+    {
+      "movieName": "Jawan",
+      "releaseDate": "2023-08-07",
+      "duration": 169,
+      "description": "A SRK and Atlee film",
+      "language": "Hindi",
+      "country": "India",
+      "genre": "Action"
+    },
+    {
+      "movieName": "The Nun 2",
+      "releaseDate": "2023-07-08",
+      "duration": 132,
+      "description": "A sequel to The Nun",
+      "language": "Engish",
+      "country": "USA",
+      "genre": "Horror"
+    }
+]
