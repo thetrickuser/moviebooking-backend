@@ -1,5 +1,6 @@
 package com.thetrickuser.moviebooking.bookingservice.entity;
 
+import com.thetrickuser.moviebooking.bookingservice.model.AvailabilityStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,18 +10,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Screen {
+public class ShowSeat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
     @ManyToOne
-    @JoinColumn(name = "cinema_id")
-    private Cinema cinema;
+    @JoinColumn(name = "showtime_id")
+    private ShowTime showTime;
 
-    private String name;
-    private Integer numberOfRows;
-    private Integer numberOfColumns;
-    private Integer totalSeats;
+    private String seatNumber;
+    private AvailabilityStatus availability;
 }

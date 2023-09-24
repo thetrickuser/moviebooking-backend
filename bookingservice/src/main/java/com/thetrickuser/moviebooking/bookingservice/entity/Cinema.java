@@ -1,31 +1,25 @@
 package com.thetrickuser.moviebooking.bookingservice.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Cinema {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String cinemaId;
+    private String id;
+    private String name;
+    private String locality;
     private String city;
     private String state;
-    private String locality;
-    private String name;
-    private Integer totalScreens;
-
-    @OneToMany(mappedBy = "cinema", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    private List<Screen> screens = new ArrayList<>();
-
+    private String pincode;
 }

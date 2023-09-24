@@ -1,9 +1,9 @@
 package com.thetrickuser.moviebooking.bookingservice.repository;
 
-import com.thetrickuser.moviebooking.bookingservice.entity.Booking;
+import com.thetrickuser.moviebooking.bookingservice.entity.ShowSeat;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookingRepository extends JpaRepository<Booking,String> {
+public interface ShowSeatsRepository extends JpaRepository<ShowSeat,String> {
 }
