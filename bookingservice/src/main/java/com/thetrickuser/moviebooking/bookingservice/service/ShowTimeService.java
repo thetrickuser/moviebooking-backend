@@ -2,18 +2,9 @@ package com.thetrickuser.moviebooking.bookingservice.service;
 
 import com.thetrickuser.moviebooking.bookingservice.entity.*;
 import com.thetrickuser.moviebooking.bookingservice.model.AvailabilityStatus;
-import com.thetrickuser.moviebooking.bookingservice.model.SearchShowsRequest;
-import com.thetrickuser.moviebooking.bookingservice.model.SearchShowsResponse;
-import com.thetrickuser.moviebooking.bookingservice.model.ShowDetails;
 import com.thetrickuser.moviebooking.bookingservice.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ShowTimeService {
@@ -25,7 +16,7 @@ public class ShowTimeService {
     private ScreenRepository screenRepository;
 
     @Autowired
-    private ShowSeatsRepository showSeatsRepository;
+    private ShowSeatRepository showSeatRepository;
 
     @Autowired
     private CinemaRepository cinemaRepository;
@@ -54,7 +45,7 @@ public class ShowTimeService {
                 seat.setAvailability(AvailabilityStatus.AVAILABLE);
                 seat.setShowTime(savedShow);
                 seat.setSeatNumber(seatNum);
-                showSeatsRepository.save(seat);
+                showSeatRepository.save(seat);
             }
             rowChar++;
         }
